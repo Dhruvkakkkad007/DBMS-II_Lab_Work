@@ -111,7 +111,7 @@ ALTER TABLE FACULTY ADD Experience INT;
 GO 
 CREATE OR ALTER TRIGGER TR_AFTER_CALCULATE_FACULTY_EXPERIENCE
 ON FACULTY
-AFTER INSERT,UPDATE
+AFTER INSERT,update
 AS
 BEGIN
     DECLARE @FID    INT;
@@ -126,12 +126,12 @@ BEGIN
 END;
 GO
 
-INSERT INTO FACULTY VALUES (110,'Prof. Mehta','mehta@univ.edu','MECH','Professor','2023-01-31',NULL);
+INSERT INTO FACULTY VALUES (111,'Prof. Mehta','mehta@univ.edu','MECH','Professor','2023-01-31',NULL);
 
-UPDATE FACULTY SET FacultyJoiningDate = '2023-02-10' WHERE FacultyID = 108;
+UPDATE FACULTY SET FacultyJoiningDate = '2023-02-10' WHERE FacultyID = 109;
 
 DROP TRIGGER TR_AFTER_CALCULATE_FACULTY_EXPERIENCE;
-
+select * from FACULTY
 -- PART-B
 
 -- 7. Create a trigger for auto-stamping enrollment dates.
@@ -151,7 +151,7 @@ BEGIN
 END;
 GO
 
-INSERT INTO ENROLLMENT VALUES (13,'CS101',null,'A+','Completed');
+INSERT INTO ENROLLMENT (EnrollmentID,StudentID,CourseID,EnrollmentDate,Grade,EnrollmentStatus) VALUES (14,2,'CS102',null,'A+','Completed');
 
 SELECT * FROM ENROLLMENT;
 

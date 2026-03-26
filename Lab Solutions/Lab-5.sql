@@ -88,7 +88,7 @@ DEALLOCATE Course_Cursor;
 GO
 
 --4. Create a cursor to display all students who enrolled in year 2021 or later.
-
+select * from STUDENT
 GO
 DECLARE @NAME VARCHAR(100), @YEAR INT;
 
@@ -102,9 +102,9 @@ FETCH NEXT FROM Student_Cursor INTO @NAME,@YEAR;
 
 WHILE @@FETCH_STATUS = 0
 BEGIN
-	 -- SELECT @NAME AS NAME ,@YEAR AS YEAR
-	 PRINT CONCAT('Student Name - ', @NAME , ' & Enrollment Year - ', @YEAR)
-	 FETCH NEXT FROM Student_Cursor INTO @NAME,@YEAR;
+	 SELECT @NAME AS NAME ,cast (@YEAR as varchar(30)) AS YEAR
+	 --PRINT CONCAT('Student Name - ', @NAME , ' & Enrollment Year - ', @YEAR)
+	 --FETCH NEXT FROM Student_Cursor INTO @NAME,@YEAR;
 END;
 
 CLOSE Student_Cursor;
