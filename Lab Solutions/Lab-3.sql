@@ -77,7 +77,8 @@ BEGIN
 END;
 
 EXEC PR_GET_COURSE_ASSIGNMENTS_BY_FACULTY 'Dr. Sheth';
-
+select * from Faculty
+select * from COURSE_ASSIGNMENT
 --6. Create a stored procedure that accepts Semester number and Year, and returns all course
 --assignments with faculty and classroom details.
 

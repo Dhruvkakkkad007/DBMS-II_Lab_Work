@@ -2,7 +2,7 @@
 -- Lab-2 : Stored Procedure
 
 -- PART-A
-
+se
 -- 1. INSERT Procedures: Create stored procedures to insert records into STUDENT tables.(PR_INSERT_STUDENT)
 
 GO
